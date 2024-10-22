@@ -1,0 +1,26 @@
+{
+    "configurations": [
+      {
+        "name": "ROS2",
+        "includePath": [
+          "${workspaceFolder}/**",
+          "/opt/ros/jazzy/include/**",  // ROS 2のインストール先のパス（ディストリビューションに応じて変更）
+          "/usr/include/**"
+        ],
+        "compilerPath": "/usr/bin/g++",  // 使用しているコンパイラのパス
+        "cStandard": "c11",
+        "cppStandard": "c++14",
+        "intelliSenseMode": "gcc-x64",
+        "browse": {
+          "path": [
+            "/opt/ros/jazzy/include",  // 同様にROS 2のパスを追加
+            "${workspaceFolder}"
+          ],
+          "limitSymbolsToIncludedHeaders": true,
+          "databaseFilename": ""
+        }
+      }
+    ],
+    "version": 4
+  }
+  
