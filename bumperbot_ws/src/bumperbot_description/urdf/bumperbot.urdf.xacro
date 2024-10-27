@@ -1,0 +1,23 @@
+<?xml version="1.0"?> <!-- XMLファイルのバージョンを宣言 -->
+
+<robot xml:xacro="http://www.ros.org/wiki/xacro" name="bumperbot"> <!-- ロボットモデルの定義。xacroテンプレートを利用し、名前を "bumperbot" に設定 -->
+
+    <link name="base_footprint"/> <!-- ロボットのベースとなる基準座標 "base_footprint" を定義。特定の形状や位置情報はない -->
+
+    <link name="base_link"> <!-- ロボットの基本リンク "base_link" を定義。 -->
+        <visual> <!-- 視覚情報の定義開始。このリンクがどう見えるかを決定 -->
+            <origin rpy="0 0 0" xyz="0 0 0"/> <!-- 視覚情報の基準位置と回転角を設定 (ロール、ピッチ、ヨーは全て0) -->
+            <geometry> <!-- 形状情報の定義開始 -->
+                <mesh filename="package://bumperbot_description/meshes/base_link.STL"/> <!-- STL形式の3Dモデルファイルを指定 -->
+            </geometry> <!-- 形状情報の定義終了 -->
+        </visual> <!-- 視覚情報の定義終了 -->
+    </link> <!-- "base_link" の定義終了 -->
+
+    <joint name="base_joint" type="fixed"> <!-- "base_footprint" と "base_link" の間のジョイントを定義。このジョイントは固定型 (動かない) -->
+        <parent link="base_footprint"/> <!-- ジョイントの親リンクを "base_footprint" に設定 -->
+        <child link="base_link"/> <!-- ジョイントの子リンクを "base_link" に設定 -->
+        <origin rpy="0 0 0" xyz="0 0 0.33"/> <!-- ジョイントの位置と回転を定義。高さが 0.33m  -->
+    </joint> <!-- ジョイントの定義終了 -->
+
+
+</robot> <!-- ロボットモデル定義終了 -->
